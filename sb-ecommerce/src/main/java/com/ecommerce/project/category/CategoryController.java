@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class CategoryController {
 
-    @Autowired  // This is filed injection
+    @Autowired  // This is field injection
     private CategoryService categoryService;
 
     // or , we can make use of constructor here for bean creation.
