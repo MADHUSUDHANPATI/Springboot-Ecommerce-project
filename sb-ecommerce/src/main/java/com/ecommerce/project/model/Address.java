@@ -45,9 +45,9 @@ public class Address {
 
     @NotBlank
     @Size(min = 6, message = "pin code name should be at least 6 numbers")  // video it is string
-    private Long pincode;
+    private String pincode;
 
-    public Address(String street, String buildingName, String city, Long pincode, String country, String state) {
+    public Address(String street, String buildingName, String city, String pincode, String country, String state) {
         this.street = street;
         this.buildingName = buildingName;
         this.city = city;
@@ -56,7 +56,7 @@ public class Address {
         this.state = state;
     }
 
-    @ToString.Exclude
-    @ManyToMany(mappedBy = "addresses") // this means addresses table is not the owner of the relationship;
-    private List<User> users = new ArrayList<>();
+    @ManyToOne    // (mappedBy = "addresses") // this means addresses table is not the owner of the relationship;
+    @JoinColumn(name = "user_id")
+    private User user;
 }
