@@ -14,3 +14,4 @@ public class SbEcommerceApplication {
 
 
 //JAR--> Java archive
+// swagger annotations : tag to tag some api's , summmary to write api summmary, Api response to custome response , schema  to write more about schema
