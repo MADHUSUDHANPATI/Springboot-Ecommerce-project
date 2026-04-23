@@ -30,6 +30,12 @@ public class MyglobalExceptionHandler {
 
         return new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
     }
+    //Error format
+//    {
+//        "name": "Name is required",
+//            "email": "Invalid email",
+//            "password": "Password must be at least 6 characters"
+//    }
 
     @ExceptionHandler (ResourceNotFoundException.class )
     public ResponseEntity<APIResponse> myResourceNotFoundException (ResourceNotFoundException e) {
