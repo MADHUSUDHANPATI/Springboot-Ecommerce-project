@@ -64,16 +64,16 @@
 
             //check if the product already present or not;
 
-            boolean isProductPresent = true;
+            boolean isProductPresent = false;
             List<Product> products= category.getProducts();
             for(Product value : products) {
                 if(value.getProductName().equals(productDTO.getProductName())) {
-                    isProductPresent = false;
+                    isProductPresent = true;
                     break;
                 }
             }
 
-            if( isProductPresent) {
+            if(!isProductPresent) {
 
                 Product product = modelMapper.map(productDTO, Product.class);
 
